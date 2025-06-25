@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Interactive Learning&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS y Font Awesome --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tu hoja de estilos personalizada --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="style.css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Librería de Supabase --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="flex items-center justify-center min-h-screen p-2 md:p-4 bg-gray-100"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- El contenedor principal de la aplicación --&gt;</p>
+<p class="p1">&lt;div id="app-container" class="container mx-auto max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PANTALLA DE LOGIN (MODIFICADA PARA EMAIL/CONTRASEÑA) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="login-screen" class="screen active p-8 md:p-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-book-reader text-5xl text-blue-600 mb-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-3xl font-bold text-gray-800 mb-2"&gt;Interactive Learning&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-600 mb-8"&gt;Ingresa tus datos para la práctica de Inglés Saber 11.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;form id="login-form" class="max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="email" class="block text-sm font-medium text-gray-700 mb-1"&gt;Correo Electrónico&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="password" class="block text-sm font-medium text-gray-700 mb-1"&gt;Contraseña&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fas fa-sign-in-alt mr-2"&gt;&lt;/i&gt;Comenzar</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="login-status" class="text-center mt-4 text-sm text-red-600 font-semibold"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">         </span>&lt;div id="user-info" class="text-center mt-6 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span id="user-welcome" class="font-semibold"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="logout-button" class="ml-4 bg-red-500 text-white text-xs font-bold py-1 px-3 rounded-lg hover:bg-red-600 transition-all"&gt;Salir&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- El resto de las pantallas de tu aplicación (sin cambios en el HTML) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="mode-selection-screen" class="screen p-8 md:p-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="text-2xl font-bold text-center mb-1"&gt;¡Bienvenido, &lt;span id="user-name-display-mode"&gt;&lt;/span&gt;!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-center text-gray-600 mb-8"&gt;¿Qué te gustaría hacer hoy?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-col md:flex-row gap-6 justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="study-mode-button" class="flex-1 bg-purple-500 text-white p-6 rounded-lg hover:bg-purple-600 transition-all transform hover:scale-105 shadow-lg text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fas fa-book-open text-4xl mb-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="block font-bold text-xl"&gt;Sección de Estudio&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="block text-sm mt-1"&gt;Actividades y lecciones&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="practice-mode-button" class="flex-1 bg-green-500 text-white p-6 rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fas fa-pencil-alt text-4xl mb-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="block font-bold text-xl"&gt;Practicar Examen&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="block text-sm mt-1"&gt;Simulacro Saber 11&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="study-screen" class="screen p-6 md:p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="flex justify-between items-center bg-gray-100 p-2 rounded-lg mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="back-to-mode text-blue-600 hover:text-blue-800 font-semibold"&gt;&lt;i class="fas fa-arrow-left mr-2"&gt;&lt;/i&gt;Volver&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-xl font-bold text-gray-700"&gt;Sección de Estudio&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="study-activity-container"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="parts-screen" class="screen p-8 md:p-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="flex justify-between items-center bg-gray-100 p-2 rounded-lg mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">           </span>&lt;button class="back-to-mode text-blue-600 hover:text-blue-800 font-semibold"&gt;&lt;i class="fas fa-arrow-left mr-2"&gt;&lt;/i&gt;Volver&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">           </span>&lt;h2 class="text-xl font-bold text-gray-700"&gt;Partes del Examen&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">           </span>&lt;div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button data-part="1" class="part-button bg-blue-500 text-white font-semibold py-8 rounded-lg hover:bg-blue-600 transition-all transform hover:scale-105 shadow-md text-lg"&gt;Parte 1&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button data-part="2" class="part-button bg-green-500 text-white font-semibold py-8 rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-md text-lg"&gt;Parte 2&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button data-part="3" class="part-button bg-purple-500 text-white font-semibold py-8 rounded-lg hover:bg-purple-600 transition-all transform hover:scale-105 shadow-md text-lg"&gt;Parte 3&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button data-part="4" class="part-button bg-red-500 text-white font-semibold py-8 rounded-lg hover:bg-red-600 transition-all transform hover:scale-105 shadow-md text-lg"&gt;Parte 4&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button data-part="5" class="part-button bg-orange-500 text-white font-semibold py-8 rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-md text-lg"&gt;Parte 5&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button data-part="6" class="part-button bg-teal-500 text-white font-semibold py-8 rounded-lg hover:bg-teal-600 transition-all transform hover:scale-105 shadow-md text-lg"&gt;Parte 6&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button data-part="7" class="part-button bg-indigo-500 text-white font-semibold py-8 rounded-lg hover:bg-indigo-600 transition-all transform hover:scale-105 shadow-md text-lg"&gt;Parte 7&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="topics-screen" class="screen p-6 md:p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="flex justify-between items-center bg-gray-100 p-2 rounded-lg mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="back-to-parts text-blue-600 hover:text-blue-800 font-semibold"&gt;&lt;i class="fas fa-arrow-left mr-2"&gt;&lt;/i&gt;Volver&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="student-info-header" class="text-right text-sm text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-bold"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 id="topics-title" class="text-2xl font-bold text-center mb-8"&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="topic-selection"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="quiz-screen" class="screen p-4 md:p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="quiz-header" class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 id="question-counter" class="text-lg font-semibold text-gray-700"&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="global-help-button" title="Ver Pista" class="text-yellow-500 hover:text-yellow-600 text-2xl transition-transform transform hover:scale-110 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-lightbulb"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="back-to-topics text-sm text-blue-600 hover:text-blue-800 font-semibold ml-4"&gt;Salir&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w-full bg-gray-200 rounded-full h-2.5 shadow-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="question-area" class="bg-white p-6 rounded-2xl shadow-lg mb-4 text-center"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="options-area" class="grid grid-cols-1 md:grid-cols-3 gap-3"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="results-screen" class="screen p-8 md:p-12 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;i id="result-icon" class="text-6xl mb-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="text-3xl font-bold text-gray-800 mb-6"&gt;Reporte de Resultados&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-gray-100 p-6 rounded-lg shadow-inner text-left max-w-md mx-auto space-y-3 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Estudiante:&lt;/strong&gt; &lt;span id="result-student-name"&gt;&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Curso:&lt;/strong&gt; &lt;span id="result-student-course"&gt;&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;hr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Sección:&lt;/strong&gt; &lt;span id="result-part"&gt;&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Tema:&lt;/strong&gt; &lt;span id="result-topic"&gt;&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg"&gt;&lt;strong&gt;Resultado:&lt;/strong&gt; &lt;span id="result-score" class="font-bold"&gt;&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-col md:flex-row justify-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="retry-button" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-md"&gt;Repetir Tema&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="back-to-topics-final" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition-transform transform hover:scale-105 shadow-md"&gt;Elegir Otro Tema&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Modal de Ayuda (sin cambios) --&gt;</p>
+<p class="p1">&lt;div id="help-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 hidden z-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bg-white rounded-lg shadow-xl max-w-sm w-full p-6 text-center relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="close-modal-button" class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-2xl"&gt;&amp;times;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 id="modal-title" class="text-2xl font-bold mb-4 text-blue-700"&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="modal-body" class="text-left"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Scripts modulares --&gt;</p>
+<p class="p1">&lt;script src="./js/auth.js" type="module"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;script src="./js/database.js" type="module"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;script src="./js/app.js" type="module"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
